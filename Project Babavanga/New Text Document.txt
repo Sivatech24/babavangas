@@ -1,0 +1,11 @@
+https://ui.aceternity.com/components/draggable-card
+
+https://ui.aceternity.com/components/expandable-card
+
+https://ui.aceternity.com/components/github-globe
+
+https://ui.aceternity.com/components/timeline
+
+https://ui.aceternity.com/components/typewriter-effect
+
+https://ui.aceternity.com/components/world-map

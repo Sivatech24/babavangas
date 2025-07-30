@@ -1,0 +1,758 @@
+/* eslint-disable @next/next/no-img-element */
+
+"use client";
+
+import React from "react";
+import { Timeline } from "@/app/components/ui/timeline";
+
+interface TimelineItem {
+  title: string;
+  description: string[];
+  images?: string[];
+}
+
+const timelineData: TimelineItem[] = [
+  {
+    title: "2025",
+    description: [
+      "Europe becomes sparsely inhabited.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/2025%20europe%20becomes%20sparsely%20inhabited/800px-Degree_of_urbanisation%2C_2021_URE2024.png",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/2025%20europe%20becomes%20sparsely%20inhabited/Intense_marine_heatwave_hits_the_western_Mediterranean_Sea_(Copernicus_2025-06-25).png",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/2025%20europe%20becomes%20sparsely%20inhabited/the-new-standard-map-of-europe-2025-quick-lore-in-comments-v0-kq54pna3q5cb1.webp",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/99655770417ede93d0629b0ebb1b1970de2c13b0/ImagesSet1/2025%20europe%20becomes%20sparsely%20inhabited/fyi5sdwnqaa61.jpg",
+    ],
+  },
+  {
+    title: "2028",
+    description: [
+      "A new power source is created, world hunger eradicated, and humans reach Venus.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/A%20new%20power%20source%20is%20created%20world%20hunger%20eradicated%20and%20humans%20reach%20Venus/Leonardo_Kino_XL_A_new_power_source_is_created_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/A%20new%20power%20source%20is%20created%20world%20hunger%20eradicated%20and%20humans%20reach%20Venus/Leonardo_Kino_XL_A_new_power_source_is_created_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/A%20new%20power%20source%20is%20created%20world%20hunger%20eradicated%20and%20humans%20reach%20Venus/Leonardo_Kino_XL_A_new_power_source_is_created_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/A%20new%20power%20source%20is%20created%20world%20hunger%20eradicated%20and%20humans%20reach%20Venus/Leonardo_Kino_XL_A_new_power_source_is_created_3.jpg",
+    ],
+  },
+  {
+    title: "2033",
+    description: [
+      "Rising sea levels due to climate change.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/Rising%20sea%20levels%20due%20to%20climate%20change/05-may_sea-level-rise.webp",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/Rising%20sea%20levels%20due%20to%20climate%20change/Sea-Level-Rise-Greenland-ice-loss_2022.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/Rising%20sea%20levels%20due%20to%20climate%20change/images.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/Rising%20sea%20levels%20due%20to%20climate%20change/land.jpg",
+    ],
+  },
+
+  {
+    title: "2043",
+    description: [
+      "Europe experiences a booming economy and becomes predominantly Islamic.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/Europe%20experiences%20a%20booming%20economy%20and%20becomes%20predominantly%20Islamic/islam-in-europe-by-2050-v0-27k4aczldnwc1.webp",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/35f094db1350b9ba24575c1ace5013b97d0cd97c/ImagesSet1/Europe%20experiences%20a%20booming%20economy%20and%20becomes%20predominantly%20Islamic/islam-muslim-quran.webp",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a8d9ecb573cf9f281781f07978ba4743aa33b1ed/ImagesSet1/Europe%20experiences%20a%20booming%20economy%20and%20becomes%20predominantly%20Islamic/9781642938203-3-500x745-1.webp",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a8d9ecb573cf9f281781f07978ba4743aa33b1ed/ImagesSet1/Europe%20experiences%20a%20booming%20economy%20and%20becomes%20predominantly%20Islamic/images.jpg",
+    ],
+  },
+  {
+    title: "2046",
+    description: [
+      "Synthetic organs are mass-produced.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Synthetic%20organs%20are%20mass%20produced/41586_2015_Article_BF519S16a_Figc_HTML.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Synthetic%20organs%20are%20mass%20produced/file-20200630-155312-1d5klwq.avif",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Synthetic%20organs%20are%20mass%20produced/images.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Synthetic%20organs%20are%20mass%20produced/istock-1038989448-l.jpg",
+    ],
+  },
+  {
+    title: "2066",
+    description: [
+      "The U.S. discovers an environmental destructor weapon.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20US%20discovers%20an%20environmental%20destructor%20weapon/Leonardo_Kino_XL_The_US_discovers_an_environmental_destructor_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20US%20discovers%20an%20environmental%20destructor%20weapon/Leonardo_Kino_XL_The_US_discovers_an_environmental_destructor_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20US%20discovers%20an%20environmental%20destructor%20weapon/Leonardo_Kino_XL_The_US_discovers_an_environmental_destructor_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20US%20discovers%20an%20environmental%20destructor%20weapon/Leonardo_Kino_XL_The_US_discovers_an_environmental_destructor_3.jpg",
+    ],
+  },
+  {
+    title: "2076",
+    description: [
+      "The social caste system collapses.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20social%20caste%20system%20collapses/CASTE-BASED_DISCRIMINATION.png",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20social%20caste%20system%20collapses/bg%2Cf8f8f8-flat%2C750x%2C075%2Cf-pad%2C750x1000%2Cf8f8f8.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20social%20caste%20system%20collapses/caste-discrimination-word-cloud.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20social%20caste%20system%20collapses/newslaundry_2020-03_8d8709c3-450e-4bdd-aaee-182d9e583a29_dalit_oppression.jpg",
+    ],
+  },
+  {
+    title: "2084",
+    description: [
+      "Nature begins to revive itself.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Nature%20begins%20to%20revive%20itself/MM9089_20230925_013969.avif",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Nature%20begins%20to%20revive%20itself/SIZED-Roelant_Savery_-_Landscape_with_Birds_-_WGA20885.webp",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Nature%20begins%20to%20revive%20itself/ganagrishikesh.webp",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Nature%20begins%20to%20revive%20itself/kalbar_drone_190493.jpg",
+    ],
+  },
+  {
+    title: "2088",
+    description: [
+      "A virus causes rapid aging.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/A%20virus%20causes%20rapid%20aging/1536x864_cmsv2_81921e54-cf75-5690-bc71-fec6f6257292-7814032.webp", 
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/A%20virus%20causes%20rapid%20aging/file-20210524-21-1ycw182.avif",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/A%20virus%20causes%20rapid%20aging/images.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/A%20virus%20causes%20rapid%20aging/istock-1273820840.jpg",
+    ],
+  },
+  {
+    title: "2097",
+    description: [
+      "The virus is eradicated.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20virus%20is%20eradicated/ImageForArticle_22760_1656621331298334.webp",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20virus%20is%20eradicated/images%20(1).jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20virus%20is%20eradicated/images%20(2).jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/The%20virus%20is%20eradicated/images.jpg",
+    ],
+  },
+  {
+    title: "2100",
+    description: [
+      "An artificial sun heats Earth's dark side.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/An%20artificial%20sun%20heats%20Earths%20dark%20side/Leonardo_Kino_XL_An_artificial_sun_heats_Earths_dark_side_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/An%20artificial%20sun%20heats%20Earths%20dark%20side/Leonardo_Kino_XL_An_artificial_sun_heats_Earths_dark_side_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/An%20artificial%20sun%20heats%20Earths%20dark%20side/Leonardo_Kino_XL_An_artificial_sun_heats_Earths_dark_side_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/An%20artificial%20sun%20heats%20Earths%20dark%20side/Leonardo_Kino_XL_An_artificial_sun_heats_Earths_dark_side_3.jpg",
+    ],
+  },
+  {
+    title: "2111",
+    description: [
+      "Humans become increasingly robotic.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Humans%20become%20increasingly%20robotic/Leonardo_Kino_XL_Humans_become_increasingly_robotic_0.jpg",      
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Humans%20become%20increasingly%20robotic/Leonardo_Kino_XL_Humans_become_increasingly_robotic_1.jpg",      
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Humans%20become%20increasingly%20robotic/Leonardo_Kino_XL_Humans_become_increasingly_robotic_2.jpg",      
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Humans%20become%20increasingly%20robotic/Leonardo_Kino_XL_Humans_become_increasingly_robotic_3.jpg",
+    ],
+  },
+  {
+    title: "2123",
+    description: [
+      "Small nations are in constant war, while superpowers abstain.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Small%20nations%20are%20in%20constant%20war%20while%20superpowers%20abstain/Leonardo_Kino_XL_Small_nations_are_in_constant_war_while_super_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Small%20nations%20are%20in%20constant%20war%20while%20superpowers%20abstain/Leonardo_Kino_XL_Small_nations_are_in_constant_war_while_super_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Small%20nations%20are%20in%20constant%20war%20while%20superpowers%20abstain/Leonardo_Kino_XL_Small_nations_are_in_constant_war_while_super_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Small%20nations%20are%20in%20constant%20war%20while%20superpowers%20abstain/Leonardo_Kino_XL_Small_nations_are_in_constant_war_while_super_3.jpg",
+    ],
+  },
+  {
+    title: "2125",
+    description: [
+      "Hungary receives signals from deep space; Baba Vanga resurfaces.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Hungary%20receives%20signals%20from%20deep%20space%20Baba%20Vanga%20resurfaces/Leonardo_Kino_XL_Hungary_receives_signals_from_deep_space_Baba_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Hungary%20receives%20signals%20from%20deep%20space%20Baba%20Vanga%20resurfaces/Leonardo_Kino_XL_Hungary_receives_signals_from_deep_space_Baba_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Hungary%20receives%20signals%20from%20deep%20space%20Baba%20Vanga%20resurfaces/Leonardo_Kino_XL_Hungary_receives_signals_from_deep_space_Baba_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Hungary%20receives%20signals%20from%20deep%20space%20Baba%20Vanga%20resurfaces/Leonardo_Kino_XL_Hungary_receives_signals_from_deep_space_Baba_3.jpg",
+    ],
+  },
+  {
+    title: "2130",
+    description: [
+      "Undersea societies are formed with extraterrestrial assistance.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Undersea%20societies%20are%20formed%20with%20extraterrestrial%20assistance/Leonardo_Kino_XL_Undersea_societies_are_formed_with_extraterre_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Undersea%20societies%20are%20formed%20with%20extraterrestrial%20assistance/Leonardo_Kino_XL_Undersea_societies_are_formed_with_extraterre_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Undersea%20societies%20are%20formed%20with%20extraterrestrial%20assistance/Leonardo_Kino_XL_Undersea_societies_are_formed_with_extraterre_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Undersea%20societies%20are%20formed%20with%20extraterrestrial%20assistance/Leonardo_Kino_XL_Undersea_societies_are_formed_with_extraterre_3.jpg",
+    ],
+  },
+  {
+    title: "2154",
+    description: [
+      "Animals evolve to become human-like.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Animals%20evolve%20to%20become%20human%20like/Leonardo_Kino_XL_Animals_evolve_to_become_humanlike_0.jpg", 
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Animals%20evolve%20to%20become%20human%20like/Leonardo_Kino_XL_Animals_evolve_to_become_humanlike_1.jpg", 
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Animals%20evolve%20to%20become%20human%20like/Leonardo_Kino_XL_Animals_evolve_to_become_humanlike_2.jpg", 
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/5cf4f31bd2c7643e316acc551364fe1843f82a9a/ImagesSet1/Animals%20evolve%20to%20become%20human%20like/Leonardo_Kino_XL_Animals_evolve_to_become_humanlike_3.jpg",
+    ],
+  },
+  {
+    title: "2167",
+    description: [
+      "A new religion gains global popularity.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/A%20new%20religion%20gains%20global%20popularity/images%20(1).jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/A%20new%20religion%20gains%20global%20popularity/images.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/A%20new%20religion%20gains%20global%20popularity/original.avif",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/A%20new%20religion%20gains%20global%20popularity/world-religion-clip-art-scaled.jpg",
+    ],
+  },
+  {
+    title: "2170",
+    description: [
+      "Earth becomes dry and desertified.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/Earth%20becomes%20dry%20and%20desertified/Leonardo_Kino_XL_Earth_becomes_dry_and_desertified_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/Earth%20becomes%20dry%20and%20desertified/Leonardo_Kino_XL_Earth_becomes_dry_and_desertified_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/Earth%20becomes%20dry%20and%20desertified/Leonardo_Kino_XL_Earth_becomes_dry_and_desertified_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/Earth%20becomes%20dry%20and%20desertified/Leonardo_Kino_XL_Earth_becomes_dry_and_desertified_3.jpg",
+    ],
+  },
+  {
+    title: "2183",
+    description: [
+      "A Mars colony becomes self-sufficient and demands sovereignty.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/A%20Mars%20colony%20becomes%20self%20sufficient%20and%20demands%20sovereignty/Leonardo_Kino_XL_A_Mars_colony_becomes_selfsufficient_and_dema_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/A%20Mars%20colony%20becomes%20self%20sufficient%20and%20demands%20sovereignty/Leonardo_Kino_XL_A_Mars_colony_becomes_selfsufficient_and_dema_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/A%20Mars%20colony%20becomes%20self%20sufficient%20and%20demands%20sovereignty/Leonardo_Kino_XL_A_Mars_colony_becomes_selfsufficient_and_dema_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/A%20Mars%20colony%20becomes%20self%20sufficient%20and%20demands%20sovereignty/Leonardo_Kino_XL_A_Mars_colony_becomes_selfsufficient_and_dema_3.jpg",
+    ],
+  },
+  {
+    title: "2187",
+    description: [
+      "Volcanic eruptions are successfully suppressed.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/Volcanic%20eruptions%20are%20successfully%20suppressed/Leonardo_Kino_XL_Volcanic_eruptions_are_successfully_suppresse_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/Volcanic%20eruptions%20are%20successfully%20suppressed/Leonardo_Kino_XL_Volcanic_eruptions_are_successfully_suppresse_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/Volcanic%20eruptions%20are%20successfully%20suppressed/Leonardo_Kino_XL_Volcanic_eruptions_are_successfully_suppresse_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/main/ImagesSet1/Volcanic%20eruptions%20are%20successfully%20suppressed/Leonardo_Kino_XL_Volcanic_eruptions_are_successfully_suppresse_3.jpg",
+    ],
+  },
+  {
+    title: "2195",
+    description: [
+      "Autonomous underwater communities emerge.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Autonomous%20underwater%20communities%20emerge/Leonardo_Kino_XL_Autonomous_underwater_communities_emerge_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Autonomous%20underwater%20communities%20emerge/Leonardo_Kino_XL_Autonomous_underwater_communities_emerge_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Autonomous%20underwater%20communities%20emerge/Leonardo_Kino_XL_Autonomous_underwater_communities_emerge_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Autonomous%20underwater%20communities%20emerge/Leonardo_Kino_XL_Autonomous_underwater_communities_emerge_3.jpg",
+    ],
+  },
+  {
+    title: "2196",
+    description: [
+      "A Euro-Asian race forms from the merging of European and Asian populations.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/A%20Euro%20Asian%20race%20forms%20from%20the%20merging%20of%20European%20and%20Asian%20populations/Leonardo_Kino_XL_A_EuroAsian_race_forms_from_the_merging_of_Eu_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/A%20Euro%20Asian%20race%20forms%20from%20the%20merging%20of%20European%20and%20Asian%20populations/Leonardo_Kino_XL_A_EuroAsian_race_forms_from_the_merging_of_Eu_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/A%20Euro%20Asian%20race%20forms%20from%20the%20merging%20of%20European%20and%20Asian%20populations/Leonardo_Kino_XL_A_EuroAsian_race_forms_from_the_merging_of_Eu_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/A%20Euro%20Asian%20race%20forms%20from%20the%20merging%20of%20European%20and%20Asian%20populations/Leonardo_Kino_XL_A_EuroAsian_race_forms_from_the_merging_of_Eu_3.jpg",
+    ],
+  },
+  {
+    title: "2201",
+    description: [
+      "The sun cools, leading to massive climatic changes.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/The%20sun%20cools%20leading%20to%20massive%20climatic%20changes/Leonardo_Kino_XL_The_sun_cools_leading_to_massive_climatic_cha_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/The%20sun%20cools%20leading%20to%20massive%20climatic%20changes/Leonardo_Kino_XL_The_sun_cools_leading_to_massive_climatic_cha_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/The%20sun%20cools%20leading%20to%20massive%20climatic%20changes/Leonardo_Kino_XL_The_sun_cools_leading_to_massive_climatic_cha_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/The%20sun%20cools%20leading%20to%20massive%20climatic%20changes/Leonardo_Kino_XL_The_sun_cools_leading_to_massive_climatic_cha_3.jpg",
+    ],
+  },
+  {
+    title: "2221",
+    description: [
+      "Humans face horrifying realizations about aliens.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Humans%20face%20horrifying%20realizations%20about%20aliens/Leonardo_Kino_XL_Humans_face_horrifying_realizations_about_ali_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Humans%20face%20horrifying%20realizations%20about%20aliens/Leonardo_Kino_XL_Humans_face_horrifying_realizations_about_ali_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Humans%20face%20horrifying%20realizations%20about%20aliens/Leonardo_Kino_XL_Humans_face_horrifying_realizations_about_ali_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Humans%20face%20horrifying%20realizations%20about%20aliens/Leonardo_Kino_XL_Humans_face_horrifying_realizations_about_ali_3.jpg",
+    ],
+  },
+  {
+    title: "2256",
+    description: [
+      "An intergalactic virus is brought back to Earth by a returning rocket.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/An%20intergalactic%20virus%20is%20brought%20back%20to%20Earth%20by%20a%20returning%20rocket/Leonardo_Kino_XL_An_intergalactic_virus_is_brought_back_to_Ear_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/An%20intergalactic%20virus%20is%20brought%20back%20to%20Earth%20by%20a%20returning%20rocket/Leonardo_Kino_XL_An_intergalactic_virus_is_brought_back_to_Ear_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/An%20intergalactic%20virus%20is%20brought%20back%20to%20Earth%20by%20a%20returning%20rocket/Leonardo_Kino_XL_An_intergalactic_virus_is_brought_back_to_Ear_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/An%20intergalactic%20virus%20is%20brought%20back%20to%20Earth%20by%20a%20returning%20rocket/Leonardo_Kino_XL_An_intergalactic_virus_is_brought_back_to_Ear_3.jpg",
+    ],
+  },
+  {
+    title: "2262",
+    description: [
+      "Mars faces the threat of asteroid destruction.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Mars%20faces%20the%20threat%20of%20asteroid%20destruction/Leonardo_Kino_XL_Mars_faces_the_threat_of_asteroid_destruction_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Mars%20faces%20the%20threat%20of%20asteroid%20destruction/Leonardo_Kino_XL_Mars_faces_the_threat_of_asteroid_destruction_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Mars%20faces%20the%20threat%20of%20asteroid%20destruction/Leonardo_Kino_XL_Mars_faces_the_threat_of_asteroid_destruction_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Mars%20faces%20the%20threat%20of%20asteroid%20destruction/Leonardo_Kino_XL_Mars_faces_the_threat_of_asteroid_destruction_3.jpg",
+    ],
+  },
+  {
+    title: "2271",
+    description: [
+      "Physical constants change, disrupting current scientific formulas.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Physical%20constants%20change%20disrupting%20current%20scientific%20formulas/Leonardo_Kino_XL_Physical_constants_change_disrupting_current_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Physical%20constants%20change%20disrupting%20current%20scientific%20formulas/Leonardo_Kino_XL_Physical_constants_change_disrupting_current_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Physical%20constants%20change%20disrupting%20current%20scientific%20formulas/Leonardo_Kino_XL_Physical_constants_change_disrupting_current_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Physical%20constants%20change%20disrupting%20current%20scientific%20formulas/Leonardo_Kino_XL_Physical_constants_change_disrupting_current_3.jpg",
+    ],
+  },
+  {
+    title: "2273",
+    description: [
+      "An Afro-Eurasian race forms due to genetic mixing.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/An%20Afro%20Eurasian%20race%20forms%20due%20to%20genetic%20mixing/Leonardo_Kino_XL_An_AfroEurasian_race_forms_due_to_genetic_mix_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/An%20Afro%20Eurasian%20race%20forms%20due%20to%20genetic%20mixing/Leonardo_Kino_XL_An_AfroEurasian_race_forms_due_to_genetic_mix_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/An%20Afro%20Eurasian%20race%20forms%20due%20to%20genetic%20mixing/Leonardo_Kino_XL_An_AfroEurasian_race_forms_due_to_genetic_mix_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/An%20Afro%20Eurasian%20race%20forms%20due%20to%20genetic%20mixing/Leonardo_Kino_XL_An_AfroEurasian_race_forms_due_to_genetic_mix_3.jpg",
+    ],
+  },
+  {
+    title: "2279",
+    description: [
+      "Energy is discovered from black holes and space matter bending.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Energy%20is%20discovered%20from%20black%20holes%20and%20space%20matter%20bending/Leonardo_Kino_XL_Energy_is_discovered_from_black_holes_and_spa_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Energy%20is%20discovered%20from%20black%20holes%20and%20space%20matter%20bending/Leonardo_Kino_XL_Energy_is_discovered_from_black_holes_and_spa_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Energy%20is%20discovered%20from%20black%20holes%20and%20space%20matter%20bending/Leonardo_Kino_XL_Energy_is_discovered_from_black_holes_and_spa_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Energy%20is%20discovered%20from%20black%20holes%20and%20space%20matter%20bending/Leonardo_Kino_XL_Energy_is_discovered_from_black_holes_and_spa_3.jpg",
+    ],
+  },
+  {
+    title: "2288",
+    description: [
+      "Time travel is discovered, and humans make contact with aliens.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Time%20travel%20is%20discovered%20and%20humans%20make%20contact%20with%20aliens/Leonardo_Kino_XL_Time_travel_is_discovered_and_humans_make_con_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Time%20travel%20is%20discovered%20and%20humans%20make%20contact%20with%20aliens/Leonardo_Kino_XL_Time_travel_is_discovered_and_humans_make_con_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Time%20travel%20is%20discovered%20and%20humans%20make%20contact%20with%20aliens/Leonardo_Kino_XL_Time_travel_is_discovered_and_humans_make_con_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Time%20travel%20is%20discovered%20and%20humans%20make%20contact%20with%20aliens/Leonardo_Kino_XL_Time_travel_is_discovered_and_humans_make_con_3.jpg",
+    ],
+  },
+  {
+    title: "2291",
+    description: [
+      "The sun cools further, and humans attempt to reheat it.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/The%20sun%20cools%20further%20and%20humans%20attempt%20to%20reheat%20it/Leonardo_Kino_XL_The_sun_cools_further_and_humans_attempt_to_r_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/The%20sun%20cools%20further%20and%20humans%20attempt%20to%20reheat%20it/Leonardo_Kino_XL_The_sun_cools_further_and_humans_attempt_to_r_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/The%20sun%20cools%20further%20and%20humans%20attempt%20to%20reheat%20it/Leonardo_Kino_XL_The_sun_cools_further_and_humans_attempt_to_r_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/The%20sun%20cools%20further%20and%20humans%20attempt%20to%20reheat%20it/Leonardo_Kino_XL_The_sun_cools_further_and_humans_attempt_to_r_3.jpg",
+    ],
+  },
+  {
+    title: "2296",
+    description: [
+      "Solar flares become common, causing satellites to crash due to gravitational changes.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Solar%20flares%20become%20common%20causing%20satellites%20to%20crash%20due%20to%20gravitational%20changes/Leonardo_Kino_XL_Solar_flares_become_common_causing_satellites_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Solar%20flares%20become%20common%20causing%20satellites%20to%20crash%20due%20to%20gravitational%20changes/Leonardo_Kino_XL_Solar_flares_become_common_causing_satellites_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Solar%20flares%20become%20common%20causing%20satellites%20to%20crash%20due%20to%20gravitational%20changes/Leonardo_Kino_XL_Solar_flares_become_common_causing_satellites_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/f8a2f75656fc84d2f68e119e56f5893e0dd0d904/ImagesSet1/Solar%20flares%20become%20common%20causing%20satellites%20to%20crash%20due%20to%20gravitational%20changes/Leonardo_Kino_XL_Solar_flares_become_common_causing_satellites_3.jpg",
+    ],
+  },
+  {
+    title: "2299",
+    description: [
+      "France leads a guerrilla war against the Islamic state.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/France%20leads%20a%20guerrilla%20war%20against%20the%20Islamic%20state/Leonardo_Kino_XL_France_leads_a_guerrilla_war_against_the_Isla_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/France%20leads%20a%20guerrilla%20war%20against%20the%20Islamic%20state/Leonardo_Kino_XL_France_leads_a_guerrilla_war_against_the_Isla_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/France%20leads%20a%20guerrilla%20war%20against%20the%20Islamic%20state/Leonardo_Kino_XL_France_leads_a_guerrilla_war_against_the_Isla_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/France%20leads%20a%20guerrilla%20war%20against%20the%20Islamic%20state/Leonardo_Kino_XL_France_leads_a_guerrilla_war_against_the_Isla_3.jpg",
+    ],
+  },
+  {
+    title: "2302",
+    description: [
+      "Major reforms in the justice system; universal laws are discovered.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Major%20reforms%20in%20the%20justice%20system%20universal%20laws%20are%20discovered/Leonardo_Kino_XL_Major_reforms_in_the_justice_system_universal_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Major%20reforms%20in%20the%20justice%20system%20universal%20laws%20are%20discovered/Leonardo_Kino_XL_Major_reforms_in_the_justice_system_universal_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Major%20reforms%20in%20the%20justice%20system%20universal%20laws%20are%20discovered/Leonardo_Kino_XL_Major_reforms_in_the_justice_system_universal_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Major%20reforms%20in%20the%20justice%20system%20universal%20laws%20are%20discovered/Leonardo_Kino_XL_Major_reforms_in_the_justice_system_universal_3.jpg",
+    ],
+  },
+  {
+    title: "2304",
+    description: [
+      "Humans study the Moon extensively.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Humans%20study%20the%20Moon%20extensively/Leonardo_Kino_XL_Humans_study_the_Moon_extensively_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Humans%20study%20the%20Moon%20extensively/Leonardo_Kino_XL_Humans_study_the_Moon_extensively_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Humans%20study%20the%20Moon%20extensively/Leonardo_Kino_XL_Humans_study_the_Moon_extensively_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Humans%20study%20the%20Moon%20extensively/Leonardo_Kino_XL_Humans_study_the_Moon_extensively_3.jpg",
+    ],
+  },
+  {
+    title: "2341",
+    description: [
+      "Earth faces grave danger from outer space.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Earth%20faces%20grave%20danger%20from%20outer%20space/Leonardo_Kino_XL_Earth_faces_grave_danger_from_outer_space_0.jpg",        
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Earth%20faces%20grave%20danger%20from%20outer%20space/Leonardo_Kino_XL_Earth_faces_grave_danger_from_outer_space_1.jpg",        
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Earth%20faces%20grave%20danger%20from%20outer%20space/Leonardo_Kino_XL_Earth_faces_grave_danger_from_outer_space_2.jpg",        
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Earth%20faces%20grave%20danger%20from%20outer%20space/Leonardo_Kino_XL_Earth_faces_grave_danger_from_outer_space_3.jpg",
+    ],
+  },
+  {
+    title: "2354",
+    description: [
+      "Water shortages arise due to unforeseen issues.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Water%20shortages%20arise%20due%20to%20unforeseen%20issues/Leonardo_Kino_XL_Water_shortages_arise_due_to_unforeseen_issue_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Water%20shortages%20arise%20due%20to%20unforeseen%20issues/Leonardo_Kino_XL_Water_shortages_arise_due_to_unforeseen_issue_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Water%20shortages%20arise%20due%20to%20unforeseen%20issues/Leonardo_Kino_XL_Water_shortages_arise_due_to_unforeseen_issue_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Water%20shortages%20arise%20due%20to%20unforeseen%20issues/Leonardo_Kino_XL_Water_shortages_arise_due_to_unforeseen_issue_3.jpg",
+    ],
+  },
+  {
+    title: "2371",
+    description: [
+      "Famine becomes a global problem.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Famine%20becomes%20a%20global%20problem/Leonardo_Kino_XL_Famine_becomes_a_global_problem_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Famine%20becomes%20a%20global%20problem/Leonardo_Kino_XL_Famine_becomes_a_global_problem_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Famine%20becomes%20a%20global%20problem/Leonardo_Kino_XL_Famine_becomes_a_global_problem_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Famine%20becomes%20a%20global%20problem/Leonardo_Kino_XL_Famine_becomes_a_global_problem_3.jpg",
+    ],
+  },
+  {
+    title: "2378",
+    description: [
+      "A new race of humans emerges.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/2bc93254b2371f70aa38d0ba61d8d720ea223631/ImagesSet2/A%20new%20race%20of%20humans%20emerges/a_new_race_of_humans_emerges_4karww6ljodp1tn8078e_0.png",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/2bc93254b2371f70aa38d0ba61d8d720ea223631/ImagesSet2/A%20new%20race%20of%20humans%20emerges/a_new_race_of_humans_emerges_1zsl12hsmdbh25lc4xtv_2.png",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/A%20new%20race%20of%20humans%20emerges/Leonardo_Kino_XL_A_new_race_of_humans_emerges_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/A%20new%20race%20of%20humans%20emerges/Leonardo_Kino_XL_A_new_race_of_humans_emerges_3.jpg",
+    ],
+  },
+  {
+    title: "2480",
+    description: [
+      "A total blackout occurs due to the collision of two artificial suns.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/A%20total%20blackout%20occurs%20due%20to%20the%20collision%20of%20two%20artificial%20suns/Leonardo_Kino_XL_A_total_blackout_occurs_due_to_the_collision_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/A%20total%20blackout%20occurs%20due%20to%20the%20collision%20of%20two%20artificial%20suns/Leonardo_Kino_XL_A_total_blackout_occurs_due_to_the_collision_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/A%20total%20blackout%20occurs%20due%20to%20the%20collision%20of%20two%20artificial%20suns/Leonardo_Kino_XL_A_total_blackout_occurs_due_to_the_collision_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/A%20total%20blackout%20occurs%20due%20to%20the%20collision%20of%20two%20artificial%20suns/Leonardo_Kino_XL_A_total_blackout_occurs_due_to_the_collision_3.jpg",
+    ],
+  },
+  {
+    title: "3005",
+    description: [
+      "Anarchy and war erupt on Mars, and planetary axes change.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Anarchy%20and%20war%20erupt%20on%20Mars%20and%20planetary%20axes%20change/Leonardo_Kino_XL_Anarchy_and_war_erupt_on_Mars_and_planetary_a_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Anarchy%20and%20war%20erupt%20on%20Mars%20and%20planetary%20axes%20change/Leonardo_Kino_XL_Anarchy_and_war_erupt_on_Mars_and_planetary_a_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Anarchy%20and%20war%20erupt%20on%20Mars%20and%20planetary%20axes%20change/Leonardo_Kino_XL_Anarchy_and_war_erupt_on_Mars_and_planetary_a_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Anarchy%20and%20war%20erupt%20on%20Mars%20and%20planetary%20axes%20change/Leonardo_Kino_XL_Anarchy_and_war_erupt_on_Mars_and_planetary_a_3.jpg",
+    ],
+  },
+  {
+    title: "3010",
+    description: [
+      "An asteroid collides with the moon, creating a massive dust cloud.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/An%20asteroid%20collides%20with%20the%20moon%2C%20creating%20a%20massive%20dust%20cloud/Leonardo_Kino_XL_An_asteroid_collides_with_the_moon_creating_a_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/An%20asteroid%20collides%20with%20the%20moon%2C%20creating%20a%20massive%20dust%20cloud/Leonardo_Kino_XL_An_asteroid_collides_with_the_moon_creating_a_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/An%20asteroid%20collides%20with%20the%20moon%2C%20creating%20a%20massive%20dust%20cloud/Leonardo_Kino_XL_An_asteroid_collides_with_the_moon_creating_a_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/An%20asteroid%20collides%20with%20the%20moon%2C%20creating%20a%20massive%20dust%20cloud/Leonardo_Kino_XL_An_asteroid_collides_with_the_moon_creating_a_3.jpg",
+    ],
+  },
+  {
+    title: "3797",
+    description: [
+      "All living beings disappear; humans establish colonies in a new solar system.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/All%20living%20beings%20disappear%20humans%20establish%20colonies%20in%20a%20new%20solar%20system/Leonardo_Kino_XL_All_living_beings_disappear_humans_establish_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/All%20living%20beings%20disappear%20humans%20establish%20colonies%20in%20a%20new%20solar%20system/Leonardo_Kino_XL_All_living_beings_disappear_humans_establish_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/All%20living%20beings%20disappear%20humans%20establish%20colonies%20in%20a%20new%20solar%20system/Leonardo_Kino_XL_All_living_beings_disappear_humans_establish_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/All%20living%20beings%20disappear%20humans%20establish%20colonies%20in%20a%20new%20solar%20system/Leonardo_Kino_XL_All_living_beings_disappear_humans_establish_3.jpg",
+    ],
+  },
+  {
+    title: "3803",
+    description: [
+      "Colonies are sparsely populated, and genetic mutations occur due to climate conditions.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Colonies%20are%20sparsely%20populated%20and%20genetic%20mutations%20occur%20due%20to%20climate%20conditions/Leonardo_Kino_XL_Colonies_are_sparsely_populated_and_genetic_m_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Colonies%20are%20sparsely%20populated%20and%20genetic%20mutations%20occur%20due%20to%20climate%20conditions/Leonardo_Kino_XL_Colonies_are_sparsely_populated_and_genetic_m_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Colonies%20are%20sparsely%20populated%20and%20genetic%20mutations%20occur%20due%20to%20climate%20conditions/Leonardo_Kino_XL_Colonies_are_sparsely_populated_and_genetic_m_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet2/Colonies%20are%20sparsely%20populated%20and%20genetic%20mutations%20occur%20due%20to%20climate%20conditions/Leonardo_Kino_XL_Colonies_are_sparsely_populated_and_genetic_m_3.jpg",
+    ],
+  },
+  {
+    title: "3805",
+    description: [
+      "Wars for resources lead to a population collapse.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/Wars%20for%20resources%20lead%20to%20a%20population%20collapse/Leonardo_Kino_XL_Wars_for_resources_lead_to_a_population_colla_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/Wars%20for%20resources%20lead%20to%20a%20population%20collapse/Leonardo_Kino_XL_Wars_for_resources_lead_to_a_population_colla_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/Wars%20for%20resources%20lead%20to%20a%20population%20collapse/Leonardo_Kino_XL_Wars_for_resources_lead_to_a_population_colla_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/Wars%20for%20resources%20lead%20to%20a%20population%20collapse/Leonardo_Kino_XL_Wars_for_resources_lead_to_a_population_colla_3.jpg",
+    ],
+  },
+  {
+    title: "3815",
+    description: [
+      "The warring period ends.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/The%20warring%20period%20ends/Leonardo_Kino_XL_The_warring_period_ends_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/The%20warring%20period%20ends/Leonardo_Kino_XL_The_warring_period_ends_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/The%20warring%20period%20ends/Leonardo_Kino_XL_The_warring_period_ends_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/The%20warring%20period%20ends/Leonardo_Kino_XL_The_warring_period_ends_3.jpg",
+    ],
+  },
+  {
+    title: "3854",
+    description: [
+      "Civilization stops progressing, and humanity reverts to tribalism",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/Civilization%20stops%20progressing%20and%20humanity%20reverts%20to%20tribalism/Leonardo_Kino_XL_Civilization_stops_progressing_and_humanity_r_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/Civilization%20stops%20progressing%20and%20humanity%20reverts%20to%20tribalism/Leonardo_Kino_XL_Civilization_stops_progressing_and_humanity_r_3.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/fbc0a00f4ac8f5b3e1fbcab88ba48d849de2416f/ImagesSet3/Civilization%20stops%20progressing%20and%20humanity%20reverts%20to%20tribalism/Leonardo_Kino_XL_Civilization_stops_progressing_and_humanity_r_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/67faa0f13b45130a8285e1b80f1312e0ae0ece34/ImagesSet3/Civilization%20stops%20progressing%20and%20humanity%20reverts%20to%20tribalism/civilization_stops_progressing_and_humanity_reverts_to_tribalism_8qcjygauinglynwq16ia_2.png",
+    ],
+  },
+  {
+    title: "3871",
+    description: [
+      "A new religion redefines morality and rituals.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/67faa0f13b45130a8285e1b80f1312e0ae0ece34/ImagesSet3/A%20new%20religion%20redefines%20morality%20and%20rituals/RLP_Mockup5.webp",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/67faa0f13b45130a8285e1b80f1312e0ae0ece34/ImagesSet3/A%20new%20religion%20redefines%20morality%20and%20rituals/The-trinity-of-religious-moral-character-Religious-reverence-encourages-The-Cooperator.png",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/67faa0f13b45130a8285e1b80f1312e0ae0ece34/ImagesSet3/A%20new%20religion%20redefines%20morality%20and%20rituals/frm.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/67faa0f13b45130a8285e1b80f1312e0ae0ece34/ImagesSet3/A%20new%20religion%20redefines%20morality%20and%20rituals/morality-banner-web-icon-set-260nw-2488444055.webp",
+    ],
+  },
+  {
+    title: "3874",
+    description: [
+      "The new religion becomes widely popular.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/The%20new%20religion%20becomes%20widely%20popular/the_new_religion_becomes_widely_popular_byahse3110ex3le7kp7z_0.png",       
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/The%20new%20religion%20becomes%20widely%20popular/the_new_religion_becomes_widely_popular_hsdi61f83uki86mpylk1_1.png",       
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/The%20new%20religion%20becomes%20widely%20popular/the_new_religion_becomes_widely_popular_q7rf2o6ufhgy45820ejq_1.png",       
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/The%20new%20religion%20becomes%20widely%20popular/the_new_religion_becomes_widely_popular_4aoawp1cxc9roierotqf_2.png",
+    ],
+  },
+  {
+    title: "3878",
+    description: [
+      "The church teaches long-forgotten scientific principles.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/The%20church%20teaches%20long%20forgotten%20scientific%20principles/Leonardo_Kino_XL_The_church_teaches_longforgotten_scientific_p_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/The%20church%20teaches%20long%20forgotten%20scientific%20principles/Leonardo_Kino_XL_The_church_teaches_longforgotten_scientific_p_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/The%20church%20teaches%20long%20forgotten%20scientific%20principles/Leonardo_Kino_XL_The_church_teaches_longforgotten_scientific_p_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/The%20church%20teaches%20long%20forgotten%20scientific%20principles/Leonardo_Kino_XL_The_church_teaches_longforgotten_scientific_p_3.jpg",
+    ],
+  },
+  {
+    title: "4302",
+    description: [
+      "Cities reemerge as science and technology are embraced.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/Cities%20reemerge%20as%20science%20and%20technology%20are%20embraced/Leonardo_Kino_XL_Cities_reemerge_as_science_and_technology_are_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/Cities%20reemerge%20as%20science%20and%20technology%20are%20embraced/Leonardo_Kino_XL_Cities_reemerge_as_science_and_technology_are_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/Cities%20reemerge%20as%20science%20and%20technology%20are%20embraced/Leonardo_Kino_XL_Cities_reemerge_as_science_and_technology_are_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/a736ef79f27fe98525fbb1d4b60c0196ac6af523/ImagesSet3/Cities%20reemerge%20as%20science%20and%20technology%20are%20embraced/Leonardo_Kino_XL_Cities_reemerge_as_science_and_technology_are_3.jpg",
+    ],
+  },
+  {
+    title: "4308",
+    description: [
+      "Human brain development leads to less selfish behavior.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Human%20brain%20development%20leads%20to%20less%20selfish%20behavior/human_brain_development_leads_to_less_selfish_behavior_ek8wxnhza0ixnuv4lsuk_0.png",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Human%20brain%20development%20leads%20to%20less%20selfish%20behavior/human_brain_development_leads_to_less_selfish_behavior_irkaf21ipu1w7bw3etr8_1.png",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Human%20brain%20development%20leads%20to%20less%20selfish%20behavior/human_brain_development_leads_to_less_selfish_behavior_lw5htgshn00zhz3cpy1u_3.png",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Human%20brain%20development%20leads%20to%20less%20selfish%20behavior/human_brain_development_leads_to_less_selfish_behavior_tt71ksodgsaqd5ft6dn8_2.png",
+    ],
+  },
+  {
+    title: "4509",
+    description: [
+      "Humans communicate with God due to heightened morality.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Humans%20communicate%20with%20God%20due%20to%20heightened%20morality/Leonardo_Kino_XL_Humans_communicate_with_God_due_to_heightened_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Humans%20communicate%20with%20God%20due%20to%20heightened%20morality/Leonardo_Kino_XL_Humans_communicate_with_God_due_to_heightened_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Humans%20communicate%20with%20God%20due%20to%20heightened%20morality/Leonardo_Kino_XL_Humans_communicate_with_God_due_to_heightened_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Humans%20communicate%20with%20God%20due%20to%20heightened%20morality/Leonardo_Kino_XL_Humans_communicate_with_God_due_to_heightened_3.jpg",
+    ],
+  },
+  {
+    title: "4599",
+    description: [
+      "Immortality becomes the norm.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Immortality%20becomes%20the%20norm/Leonardo_Kino_XL_Immortality_becomes_the_norm_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Immortality%20becomes%20the%20norm/Leonardo_Kino_XL_Immortality_becomes_the_norm_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Immortality%20becomes%20the%20norm/Leonardo_Kino_XL_Immortality_becomes_the_norm_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Immortality%20becomes%20the%20norm/Leonardo_Kino_XL_Immortality_becomes_the_norm_3.jpg",
+    ],
+  },
+  {
+    title: "4674",
+    description: [
+      "Human prosperity peaks at 340 billion, with extraterrestrial mingling.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Human%20prosperity%20peaks%20at%20340%20billion%20with%20extraterrestrial%20mingling/Leonardo_Kino_XL_Human_prosperity_peaks_at_340_billion_with_ex_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Human%20prosperity%20peaks%20at%20340%20billion%20with%20extraterrestrial%20mingling/Leonardo_Kino_XL_Human_prosperity_peaks_at_340_billion_with_ex_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Human%20prosperity%20peaks%20at%20340%20billion%20with%20extraterrestrial%20mingling/Leonardo_Kino_XL_Human_prosperity_peaks_at_340_billion_with_ex_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/Human%20prosperity%20peaks%20at%20340%20billion%20with%20extraterrestrial%20mingling/Leonardo_Kino_XL_Human_prosperity_peaks_at_340_billion_with_ex_3.jpg",
+    ],
+  },
+  {
+    title: "5076",
+    description: [
+      "The edge of the known universe is discovered.5078: Humanity attempts to leave the known universe; 40% refuse.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/The%20edge%20of%20the%20known%20universe%20is%20discovered%205078%20Humanity%20attempts%20to%20leave%20the%20known%20universe%2040%20refuse/Leonardo_Kino_XL_The_edge_of_the_known_universe_is_discovered5_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/The%20edge%20of%20the%20known%20universe%20is%20discovered%205078%20Humanity%20attempts%20to%20leave%20the%20known%20universe%2040%20refuse/Leonardo_Kino_XL_The_edge_of_the_known_universe_is_discovered5_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/The%20edge%20of%20the%20known%20universe%20is%20discovered%205078%20Humanity%20attempts%20to%20leave%20the%20known%20universe%2040%20refuse/Leonardo_Kino_XL_The_edge_of_the_known_universe_is_discovered5_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/The%20edge%20of%20the%20known%20universe%20is%20discovered%205078%20Humanity%20attempts%20to%20leave%20the%20known%20universe%2040%20refuse/Leonardo_Kino_XL_The_edge_of_the_known_universe_is_discovered5_3.jpg",
+    ],
+  },
+  {
+    title: "5079",
+    description: [
+      "The world ends.",
+    ],
+    images: [
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/The%20world%20ends/Leonardo_Kino_XL_The_world_ends_0.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/The%20world%20ends/Leonardo_Kino_XL_The_world_ends_1.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/The%20world%20ends/Leonardo_Kino_XL_The_world_ends_2.jpg",
+      "https://raw.githubusercontent.com/Sivatech24/ImgHost/90a544b39117e8bb5e0c9fc8f0c6ed86b2d67e0e/ImagesSet3/The%20world%20ends/Leonardo_Kino_XL_The_world_ends_3.jpg",
+    ],
+  },
+
+
+  // default:
+  /*{
+    title: "Changelog",
+    description: [
+      "Deployed 5 new components on Aceternity today",
+      "✅ Card grid component",
+      "✅ Startup template Aceternity",
+      "✅ Random file upload lol",
+      "✅ Himesh Reshammiya Music CD",
+      "✅ Salman Bhai Fan Club registrations open",
+    ],
+    images: [
+      "https://assets.aceternity.com/pro/hero-sections.png",
+      "https://assets.aceternity.com/features-section.png",
+      "https://assets.aceternity.com/pro/bento-grids.png",
+      "https://assets.aceternity.com/cards.png",
+    ],
+  },*/
+];
+
+export default function TimelineDemo() {
+  const timelineItems = timelineData.map((item) => ({
+    title: item.title,
+    content: (
+      <div>
+        {item.description.map((text, index) => (
+          <p
+            key={index}
+            className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200"
+          >
+            {text}
+          </p>
+        ))}
+        {item.images && (
+          <div className="grid grid-cols-2 gap-4 mt-4">
+            {item.images.map((src, index) => (
+              <img
+                key={index}
+                src={src}
+                alt={`timeline-image-${index}`}
+                width={500}
+                height={500}
+                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    ),
+  }));
+
+  return (
+    <div className="relative w-full overflow-clip">
+      <Timeline data={timelineItems} />
+    </div>
+  );
+}
